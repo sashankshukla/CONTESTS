@@ -15,21 +15,19 @@ int main(){
 ios::sync_with_stdio(0);cin.tie(0);
 int t; cin >> t;
 FOR(t){
-    string a; string b; 
-    cin >> a >> b;
-    string construct = "";
-    for(int l=0,r=0;l<a.size() && r<b.size();){
-        if(a[l] == b[r]){
-            construct += a[l];
-            ++l ; ++r;
-        }
-        else{
-            ++r;
-        }
+   string a,b; cin >> a >> b;
+   string construct = "";
+   for(int l=0,r=0; l<a.size() && r<b.size();){
+       if(a[l] == b[r]){
+           construct += a[l];
+           ++l;
+       }
+       ++r;
+   }
+   if(a == construct){
+      print(i, b.size()-a.size());
     }
-    if(construct == a){
-      print(i , b.size()-a.size());}
     else
-      print(i, "IMPOSSIBLE");
+     print(i,"IMPOSSIBLE");
  }
 }

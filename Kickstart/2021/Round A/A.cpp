@@ -15,7 +15,13 @@ int main(){
 ios::sync_with_stdio(0);cin.tie(0);
 int t; cin >> t;
 FOR(t){
-   int n; cin >> n;
-   string s; cin >> s;
+    int n,k; cin >> n >> k;
+    string s; cin >> s;
+    int res=0;
+    for(int i=0;i<=n-i-1;++i){
+        if(s[i] != s[n-i-1])
+         ++res;
+    }
+    print(i,abs(k-res));
  }
 }

@@ -8,7 +8,7 @@ int solve(){}
 int main(){
    ios::sync_with_stdio(0);cin.tie(0); int t,n,k,s; in(t);
    FOR(t){
-    in(n);in(k);in(s)
+    cin >> n >> k >> s;
     print(i,min(n+k,2*(k-s)+n));
    }
 }

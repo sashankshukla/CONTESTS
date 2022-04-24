@@ -16,15 +16,21 @@ int main(){
 ios::sync_with_stdio(0);cin.tie(0);
 int t; cin >> t;
 for(int i=0;i<t;++i){
-  int r,a,b; cin >> r >> a >> b;
-  double ans = r*r;
-  int R = r;
-  while(R > 0){
-     R*=a;
-     ans += R*R;
-     R = floor(R/b);
-     ans += R*R;
+   const double pi = acos(-1);
+    ll r, a, b;
+    cin >> r >> a >> b;
+    int cur = 0;
+    ll ans = 0;
+    while(r > 0) {
+    	ans += r * r;
+    	if(cur) {
+    		r /= b;
+    	}
+    	else {
+    		r *= a;
+    	}
+    	cur ^= 1;
+    }
+    cout << "Case #" << i+1 << ": " << fixed << setprecision(6) << pi * ans << "\n";
   }
-  print(i,ans*M_PI);
- }
 }

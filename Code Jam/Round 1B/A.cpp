@@ -11,24 +11,35 @@ typedef long  long  ll;
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
 #define line()     "\n"
 
-void solve(){
-   ll r,a,b; cin >> r >> a >> b;
-   ll area = (r*r);
-   while(r > 0){
-       r*=a;
-       area += r*r;
-       r/=b;
-       area += r*r;
-   }
-   long double PI = atan(1)*4;
-   cout << fixed << setprecision(6) << area*PI << "\n";
-}
-
 int main(){
 ios::sync_with_stdio(0);cin.tie(0);
 int t; cin >> t;
 FOR(t){
-    cout << "Case #" << i+1 << ": ";
-    solve();
-}
+    int n; cin >> n;
+    int maxpancake=0;
+    vector<int> p;
+    for(int j=0;j<n;++j){
+        int val; cin >> val;
+        p.push_back(val);
+    }
+    int res =0;
+    int l=0,r=n-1;
+    for(int j=0;j<n;++j){
+        if(p[l] < p[r]){
+            if(p[l] >= maxpancake){
+             ++res;
+             maxpancake = p[l];
+            }
+            ++l;
+        }
+        else{
+            if(p[r] >= maxpancake){
+                ++res;
+                maxpancake = p[r];
+             }
+             --r;
+        }
+    }
+    print(i,res);
+ }
 }

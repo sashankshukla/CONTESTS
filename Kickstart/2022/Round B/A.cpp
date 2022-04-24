@@ -11,26 +11,26 @@ typedef long  long  ll;
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
 #define line()     "\n"
 
-
 int main(){
 ios::sync_with_stdio(0);cin.tie(0);
 int t; cin >> t;
 for(int i=0;i<t;++i){
-   const double pi = acos(-1);
-    ll r, a, b;
-    cin >> r >> a >> b;
-    int cur = 0;
-    ll ans = 0;
-    while(r > 0) {
-    	ans += r * r;
-    	if(cur) {
-    		r /= b;
-    	}
-    	else {
-    		r *= a;
-    	}
-    	cur ^= 1;
-    }
-    cout << "Case #" << i+1 << ": " << fixed << setprecision(6) << pi * ans << "\n";
-  }
+  ll r,a,b; cin >> r >> a >> b;
+  ll ans = 0;
+  int cnt=0;
+  ll newr = r;
+  ans += (newr*newr);
+  while(newr != 0){
+      if(cnt == 0)
+       newr= newr*a;
+      else
+       newr = newr/b;
+      if(cnt == 0)
+       cnt = 1;
+      else
+       cnt  = 0;
+     ans += (newr*newr);
+  }  
+  cout << "Case #" << i+1 << ": " << fixed << setprecision(6) << ans*M_PI << "\n";
+ }
 }

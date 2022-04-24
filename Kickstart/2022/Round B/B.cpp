@@ -27,22 +27,22 @@ int main(){
 ios::sync_with_stdio(0);cin.tie(0);
 int t; cin >> t;
 for(int i=0;i<t;++i){
-    int n ; cin >> n;
-    vector<int> factors;
+    long long n ; cin >> n;
     int res = 0;
-    for(int i=1;(i*i)<=n;++i){
-       if(n%i == 0)
-         factors.push_back(i);
-       if(n%i==0 && (n/i != i))
-         factors.push_back(n/i);
-    }
-    for(int val : factors){
-        if(val <=9){
-            ++res;
-            continue;
+    for(ll i=1;((ll)i*(ll)i)<=n;++i){
+        if(n%i==0){
+            int o = n/i;
+            if(i!=o){
+                if(is_palindrome(i))
+                 ++res;
+                if(is_palindrome(o))
+                 ++res;
+            }
+            else{
+                if(is_palindrome(i))
+                ++res;
+            }
         }
-        if(is_palindrome(val))
-        ++res;
     }
     print(i,res);
   }

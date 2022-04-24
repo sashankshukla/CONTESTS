@@ -20,9 +20,11 @@ FOR(t){
    for(int l=0,r=0; l<a.size() && r<b.size();){
        if(a[l] == b[r]){
            construct += a[l];
-           ++l;
+           ++l; ++r;
        }
-       ++r;
+       else{
+           ++r;
+       }
    }
    if(a == construct){
       print(i, b.size()-a.size());

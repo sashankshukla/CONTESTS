@@ -10,6 +10,7 @@ typedef long  long  ll;
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
 #define line()     "\n"
 
+
 int main(){
 ios::sync_with_stdio(0);cin.tie(0);
 }

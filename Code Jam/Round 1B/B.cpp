@@ -34,7 +34,6 @@ for(int i=0;i<t;++i){
             cout << res << line();
         }
         int second_last = v[j][p-2],last = v[j][p-1];
-        cout << second_last <<  " " << last << line();
         if(j == n-1){
             res += abs((ll)second_last-prev);
             cout << res << line();

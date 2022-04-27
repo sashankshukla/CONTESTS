@@ -26,37 +26,19 @@ for(int i=0;i<t;++i){
     }
 
     ll res = 0;
-    int prev=0;
+    ll prev=0;
     for(int j=0;j<n;++j){
-        for(int k=0;k<p-2;++k){
-            res+=(ll)v[j][k]-prev;
-            prev = v[j][k];
-            cout << res << line();
-        }
-        int second_last = v[j][p-2],last = v[j][p-1];
-        if(j == n-1){
-            res += abs((ll)second_last-prev);
-            cout << res << line();
-            res += abs((ll)last - second_last);
-            cout << res << line();
-        }
-        if(j != n-1 && abs(second_last-v[j+1][0]) <= abs(last-v[j+1][0])){
-        res += abs((ll)last-prev);
-        cout << res << line();
-        prev = last;
-        res += abs((ll)second_last-prev);
-        cout << res << line();
-        prev= second_last;
-        }
-        else{
-            res += abs((ll)second_last-prev);
-            cout << res << line();
-            prev = second_last;
-            res += abs((ll)last-prev);
-            cout << res << line();
-            prev= last;
-        }
+       ll maxval=0,minval=0;
+       for(int k=0;k<p;++k){
+           if(k==0)
+             prev = maxval;
+           if(v[j][k]>maxval)
+             maxval= v[j][k];
+           if(v[j][k] < minval)
+             minval = v[j][k];
+            res += abs(maxval-prev)+ (maxval-minval);
+       }
     }
-    print(i,res);
+     print(i,res);
  }
 }

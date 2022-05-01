@@ -6,11 +6,12 @@ typedef long  long  ll;
 #define MOD 1000000007
 #define pb  push_back
 #define FOR(a)     for(int i=0;i<a;++i)
+#define sort(v)    sort(v.begin(),v.end());
 #define reverse(v) reverse(v.begin(),v.end());
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
-#define line()     "\n"
+#define line()   "\n"
 
 
 int main(){
-ios::sync_with_stdio(0);cin.tie(0);
+  ios::sync_with_stdio(0);cin.tie(0);
 }

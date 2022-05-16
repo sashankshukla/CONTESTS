@@ -9,11 +9,8 @@ typedef long  long  ll;
 #define sort(v)    sort(v.begin(),v.end());
 #define reverse(v) reverse(v.begin(),v.end());
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
-#define line()   "\n"
-
+#define line()     "\n"
 
 int main(){
-  ios::sync_with_stdio(0);cin.tie(0);
-  stack<int> st; queue<int> q;
-  cout << 1 << line();
+ios::sync_with_stdio(0);cin.tie(0);
 }

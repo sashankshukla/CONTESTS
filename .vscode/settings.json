@@ -1,6 +1,8 @@
 {
   "files.associations": {
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "iostream": "cpp",
+    "complex": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "C:/MinGW/bin/gcc.exe",
   "C_Cpp_Runner.cppCompilerPath": "C:/MinGW/bin/g++.exe",
@@ -29,5 +31,6 @@
     "**/.*/**",
     "**/.vscode",
     "**/.vscode/**"
-  ]
+  ],
+  "C_Cpp_Runner.useMsvc": false
 }

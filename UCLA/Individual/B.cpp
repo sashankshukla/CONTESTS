@@ -14,6 +14,23 @@ typedef long  long  ll;
 
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
-  stack<int> st; queue<int> q;
-  cout << 1 << line();
+  int n,p,x,y; cin >> n >> p >> x >> y;
+  int ans = 0;
+  int i=1;
+  string s = " "; 
+  while(p > 0){
+     if(i%n == 0){
+         ans+= y;
+         s="m";
+     }
+     else{
+         --p;
+         ans+=x;
+         s="p";
+     }
+     ++i;
+  }
+  if(s == "p" && i%n ==0)
+    ans+=y;
+  cout << ans;
 }

@@ -14,14 +14,23 @@ typedef long  long  ll;
 
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
-  vector<vector<int>> v = {{1,2,3,4,5},
-                         {6,7,8,9,10},
-                         {11,12,13,14,15}};
-                         
-  for(int i=0;i<v[0].size();++i){
-    for(int j=0;j<v.size();++j){
-       cout << v[i][j] <<  " ";
-    }
-    cout << line();
+  int n,p,x,y; cin >> n >> p >> x >> y;
+  int ans = 0;
+  int i=1;
+  string s = " "; 
+  while(p > 0){
+     if(i%n == 0){
+         ans+= y;
+         s="m";
+     }
+     else{
+         --p;
+         ans+=x;
+         s="p";
+     }
+     ++i;
   }
+  if(s == "p" && i%n ==0)
+    ans+=y;
+  cout << ans;
 }

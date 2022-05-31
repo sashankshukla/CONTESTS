@@ -16,10 +16,14 @@ int main(){
   ios::sync_with_stdio(0);cin.tie(0);
   int t; cin >> t;
   FOR(t){
-      int n,x,y; cin >> n >> x >> y;
-      int sum = (n*(n+1))/2;
-      int f = (x/(x+y))*sum;
-      int l = (y/(x+y))*sum;
-      
+    int n,x,y; cin >> n >> x >> y;
+    int sum = (n*(n+1))/2;
+    if((x*sum)%(x+y) != 0 || (y*sum)%(x+y)!=0){
+       print(i,"IMPOSSIBLE");
+       break;
+    }
+    int search = (x*sum)/(x+y);
+    
+    
   }
 }

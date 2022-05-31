@@ -11,17 +11,37 @@ typedef long  long  ll;
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
 #define line()   "\n"
 
+vector<int> v = {6,3,4,8,7,12,43,52,2,8,90,100,87,2};
+
+void selection_sort(){
+  for(int i=0;i<v.size();++i){
+    int min = i;
+    for(int j=i+1;j<v.size();++j){
+      if(v[j] < v[i])
+        min= j;
+    }
+    swap(v[i],v[min]);
+  }
+}
+
+void insertion_sort(){
+  for(int i=1;i<v.size();++i){
+       int temp = v[i];
+       int j = i;
+       while(j>0 && v[j-1] > temp){
+           v[j] = v[j-1];
+           --j;
+       }
+      v[j] = temp;
+  }
+}
 
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
-  vector<vector<int>> v = {{1,2,3,4,5},
-                         {6,7,8,9,10},
-                         {11,12,13,14,15}};
-                         
-  for(int i=0;i<v[0].size();++i){
-    for(int j=0;j<v.size();++j){
-       cout << v[i][j] <<  " ";
-    }
-    cout << line();
-  }
+
+  insertion_sort();                 
+  for(auto u : v){
+    cout << u << " ";
+  } 
+  cout << line();
 }

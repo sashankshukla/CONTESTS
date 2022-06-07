@@ -19,7 +19,6 @@ int main(){
   FOR(t){
       string s; cin >> s;
       int result = 0;
-      
       print(i,result);
   }
 }

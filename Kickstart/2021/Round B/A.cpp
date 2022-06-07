@@ -15,19 +15,17 @@ int main(){
 ios::sync_with_stdio(0);cin.tie(0);
 int t; cin >> t;
 FOR(t){
-    int n; cin >> n;
+    int n ; cin >> n;
     string s; cin >> s;
-    cout << "Case #" << i+1 << ": ";
-    int res = 1;
-    cout << res << " " ;
-    for(int j=1;j<n;++j){
-        if(s[j] > s[j-1])
-           ++res;
-        else{
-            res = 1;
-        }
-        cout << res << " ";
+    cout << "Case #" << i+1 << ": " << 1 << " ";
+    int curr_count = 1;
+    for(int i=1;i<s.size();++i){
+        if(s[i]>s[i-1])
+          ++curr_count;
+        else
+          curr_count = 1;
+        cout << curr_count << " ";
     }
-    cout << line();
+    cout << "\n";
  }
 }

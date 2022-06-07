@@ -11,36 +11,26 @@ typedef long  long  ll;
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
 #define line()   "\n"
 
-vector<int> v = {6,3,4,8,7,12,43,52,2,8,90,100,87,2};
-
-void selection_sort(){
-  for(int i=0;i<v.size();++i){
-    int min = i;
-    for(int j=i+1;j<v.size();++j){
-      if(v[j] < v[i])
-        min= j;
-    }
-    swap(v[i],v[min]);
-  }
-}
-
-
-void insertion_sort(){
-  for(int i=1;i<v.size();++i){
-       int temp = v[i];
-       int j = i;
-       while(j>0 && v[j-1] > temp){
-           v[j] = v[j-1];
-           --j;
-       }
-      v[j] = temp;
-  }
-}
 
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
-  int t=5;
-  while(t--){
-    cout << t << line();
+  int n,p,x,y; cin >> n >> p >> x >> y;
+  int ans = 0;
+  int i=1;
+  string s = " "; 
+  while(p > 0){
+     if(i%n == 0){
+         ans+= y;
+         s="m";
+     }
+     else{
+         --p;
+         ans+=x;
+         s="p";
+     }
+     ++i;
   }
+  if(s == "p" && i%n ==0)
+    ans+=y;
+  cout << ans;
 }

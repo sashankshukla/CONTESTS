@@ -15,23 +15,23 @@ int main(){
   ios::sync_with_stdio(0);cin.tie(0);
   int t; cin >> t;
   for(int i=0;i<t;++i){
-    int w,n; cin >> w >> n;
-    vector<int> v;
-    for(int j=0;j<w;++j){
-      int val; cin >> val;
-      v.push_back(val);
-    }
-    sort(v);
-    ll ans = (ll)1e18;
-    for(int j=0;j<w;++j){
-       int best = v[j];
-       ll res = 0;
-       for(int val : v){
-       int a,b;
-       res+=(ll)min(a,b);
-     }
-     ans = min(ans,res);
-    }
-    print(i,ans);
+      int n; cin >> n;
+      string s; cin >> s;
+      int result = 0;
+      for(int j=0;j<n;++j){
+          if(s[j] == '1')
+            continue;
+          else{
+              int l=j,r=j;
+              while(s[l] != '1' && s[r] != '1'){
+                  --l;++r;
+              }
+              if(s[l] == '1')
+                result+=abs(l-j);
+              else if(s[r] == '1')
+                result+=abs(r-j);
+          }
+      }
+      print(i,result);
   }
 }

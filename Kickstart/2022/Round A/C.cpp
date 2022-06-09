@@ -25,6 +25,7 @@ void fill_factorial(string a,int l){
     if(a[i] == '?'){
       fill_factorial(a.replace(i,1,"0"),i+1);
       fill_factorial(a.replace(i,1,"1"),i+1);
+      break;
     }
   }
 }

@@ -11,23 +11,8 @@ typedef long  long  ll;
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
 #define line()     "\n"
 
+
+
 int main(){
 ios::sync_with_stdio(0);cin.tie(0);
-int t; cin >> t;
-for(int i=0; i<t;++i){
-   ll a,b ; cin >> a >> b;
-   int cnt=0;
-   for(ll i=a;i<=b;++i){
-       string s= to_string(i);
-       ll sum=0; ll product=1;
-       for(char ch : s){
-           int digit = ch - '0';
-           sum+=(ll)digit;
-           product*=(ll)digit;
-       }
-       if(product%sum == 0)
-         ++cnt;
-   }
-   print(i ,cnt);
-}
 }

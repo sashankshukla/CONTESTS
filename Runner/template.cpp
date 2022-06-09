@@ -11,6 +11,23 @@ typedef long  long  ll;
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
 #define line()   "\n"
 
+  
+
+vector<string> perms;   
+void permute(string a, int l, int r){
+  if(l == r)
+    perms.push_back(a);
+  else
+   for(int i=l;i<=r;++i){
+     swap(a[l],a[i]);
+     permute(a,l+1,r);
+     swap(a[l],a[i]);
+   }
+}
+
+
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
-}
+  string s; cin >> s;
+  permute(s,0,s.size()-1);
+} 

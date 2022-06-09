@@ -14,23 +14,22 @@ typedef long  long  ll;
   
 
 vector<string> perms; // all possible strings after changing question mark
-// void permute(string a,int l, int r){
 
-//   if(a.find('?') == string::npos && find(perms.begin(),perms.end(),a) == perms.end()){
-//        perms.push_back(a);
-//        return;
-//   }
-//   for(int i=l;i<=r;++i){
-//       if(a[i] == '?'){
-//         a[i]='0';
-//         permute(a,l+1,r);
-//         a[i]='1';
-//         permute(a,l+1,r);
-//       }
-//    }
-// }
 
-void permute(string a, int index){
+void fill_factorial(string a,int l){
+  if(a.find('?') == string::npos){
+       perms.push_back(a);
+       return;
+  }
+  for(int i=l;i<a.size();++i){
+    if(a[i] == '?'){
+      fill_factorial(a.replace(i,1,"0"),i+1);
+      fill_factorial(a.replace(i,1,"1"),i+1);
+    }
+  }
+}
+
+void fill(string a, int index){
    bool chk = false;
    int temp = index;
    for(int i=index;i<a.size();++i){
@@ -44,8 +43,8 @@ void permute(string a, int index){
      perms.push_back(a);
      return;
    }
-   permute(a.replace(temp,1,"0"),temp+1);
-   permute(a.replace(temp,1,"1"),temp+1);
+   fill(a.replace(temp,1,"0"),temp+1);
+   fill(a.replace(temp,1,"1"),temp+1);
 }
 
 
@@ -59,9 +58,8 @@ int main(){
   int t; cin >> t;
   for(int i=0;i<t;++i){
     perms.clear();
-    int n; cin >> n;
-    string s; cin >> s;
-    permute(s,0);
+    int n; cin >> n; string s; cin >> s;
+    fill_factorial(s,0);
     bool res = false;
     for(string p : perms){
       if(p.size() < 5){

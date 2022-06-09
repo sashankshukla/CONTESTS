@@ -13,21 +13,63 @@ typedef long  long  ll;
 
   
 
-vector<string> perms;   
-void permute(string a, int l, int r){
-  if(l == r)
-    perms.push_back(a);
-  else
-   for(int i=l;i<=r;++i){
-     swap(a[l],a[i]);
-     permute(a,l+1,r);
-     swap(a[l],a[i]);
+vector<string> perms; // all possible strings after changing question mark
+void permute(string a,int l, int r){
+  if(a.find('?') == string::npos && find(perms.begin(),perms.end(),a) == perms.end()){
+       perms.push_back(a);
+       return;
+  }
+  for(int i=l;i<=r;++i){
+      if(a[i] == '?'){
+        a[i]='0';
+        permute(a,l+1,r);
+        a[i]='1';
+        permute(a,l+1,r);
+      }
    }
 }
 
+bool isPalindrome(string s){
+  string rev(s.rbegin(),s.rend());
+  return rev==s;
+}
 
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
-  string s; cin >> s;
-  permute(s,0,s.size()-1);
+  int t; cin >> t;
+  for(int i=0;i<t;++i){
+    int n; cin >> n; string s; cin >> s;
+    permute(s,0,n-1);
+    bool res = false;
+    for(string perm : perms){
+      cout << perm << endl;
+      if(perm.size() < 5){
+        res = true;
+        break;
+      }
+      else{
+        bool chk = true;
+        for(int j=0;j<perm.size();++j){
+          for(int k=5;k+j-1<perm.size() && k<=6;++k){
+             string sub = perm.substr(j,k);
+             if(isPalindrome(sub)){
+               chk = false;
+               j = perm.size();
+               break;
+             }
+          }
+        }
+        if(chk){
+          res = true;
+          break;
+        }
+      } 
+    }
+    if(res){
+      print(i,"POSSIBLE");
+    }
+    else{
+      print(i,"IMPOSSIBLE");
+    }
+  }
 } 

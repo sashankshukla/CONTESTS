@@ -23,7 +23,5 @@ int main(){
        break;
     }
     int search = (x*sum)/(x+y);
-    
-    
   }
 }

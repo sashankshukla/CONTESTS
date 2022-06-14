@@ -15,7 +15,6 @@ typedef long  long  ll;
 
 vector<string> perms; // all possible strings after changing question mark
 
-
 void fill_factorial(string a,int l){
   if(a.find('?') == string::npos){
        perms.push_back(a);
@@ -23,8 +22,10 @@ void fill_factorial(string a,int l){
   }
   for(int i=l;i<a.size();++i){
     if(a[i] == '?'){
-      fill_factorial(a.replace(i,1,"0"),i+1);
-      fill_factorial(a.replace(i,1,"1"),i+1);
+      a[i] = '0';
+      fill_factorial(a,i+1);
+      a[i] = '1';
+      fill_factorial(a,i+1);
       break;
     }
   }

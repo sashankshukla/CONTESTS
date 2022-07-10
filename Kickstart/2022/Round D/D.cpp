@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 int dRow[] = { -1, 0, 1, 0 }, dCol[] = { 0, 1, 0, -1 };//direction vectors
-const int mxn=1e5; vector<int> adj[mxn]; bool visited[mxn]; int d[mxn];
 typedef long  long  ll;
 #define MOD 1000000007
 #define pb  push_back
@@ -11,24 +10,23 @@ typedef long  long  ll;
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
 #define line()   "\n"
 
+
 int main(){
-  int n,find; cin >> n >> find;
-  vector<int> v;
-  for(int i=0;i<n;++i)
-  {
-    int val; cin >> val;
-    v.push_back(val);
+  ios::sync_with_stdio(0);cin.tie(0);
+  int t; cin >> t;
+  for(int i=0;i<t;++i){
+    int n,m,k; cin >> n >> m >> k;
+    int res =0;
+    map<int,vector<int>> mp;
+    for(int j=0;j<m;++j){
+      int x,y; cin >> x >> y;
+      mp[y].push_back(x);
+    }
+    for(int j=1;j<=n;++j){
+       if(mp[j].size()!=0)
+        ++res;
+    }
+    print(i,res);
+    
   }
-  sort(v);
-  int l=0,r=n-1;
-  int sum = -1;
-  while(sum != find){
-    sum = v[l] + v[r];
-    if(sum == find)
-      cout << l+1 << " " << r+1;
-    else if(sum > find)
-      --r;
-    else
-      ++l;
-  }
-} 
+}

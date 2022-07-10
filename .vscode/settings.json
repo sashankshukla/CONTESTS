@@ -15,7 +15,8 @@
     "slist": "cpp",
     "initializer_list": "cpp",
     "regex": "cpp",
-    "valarray": "cpp"
+    "valarray": "cpp",
+    "ostream": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "C:/MinGW/bin/gcc.exe",
   "C_Cpp_Runner.cppCompilerPath": "C:/MinGW/bin/g++.exe",
@@ -45,5 +46,6 @@
     "**/.vscode",
     "**/.vscode/**"
   ],
-  "C_Cpp_Runner.useMsvc": false
+  "C_Cpp_Runner.useMsvc": false,
+  "C_Cpp.errorSquiggles": "EnabledIfIncludesResolve"
 }

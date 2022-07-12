@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "c:/Users/ayazs/OneDrive/Desktop/CONTESTS/Runner",
-      "program": "c:/Users/ayazs/OneDrive/Desktop/CONTESTS/Runner/build/Debug/outDebug",
+      "cwd": "c:/Users/ayazs/OneDrive/Desktop/CONTESTS/HackerCup/2021",
+      "program": "c:/Users/ayazs/OneDrive/Desktop/CONTESTS/HackerCup/2021/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
       "setupCommands": [

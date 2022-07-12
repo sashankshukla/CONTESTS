@@ -40,6 +40,7 @@ int main(){
         keyboard.push_back(val);
     }
     int res = 0;
+    vector<vector<int>> paths;
     int curr_index = getIndex(keyboard,word[0]);
     for(int j=1;j<n;++j){
         int new_index = getIndex(keyboard,word[j]);
@@ -53,3 +54,8 @@ int main(){
     print(i,res);
   }
 }
+
+// find all possible starting indexes
+// for each path, everytime you can add at most m occurences 
+// chose path with min abs difference between consecutive elements
+

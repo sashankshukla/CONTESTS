@@ -16,6 +16,7 @@ int main(){
   int t; cin >> t;
   for(int i=0;i<t;++i){
     int n; cin >> n;
+    set<pair<int,int>> set;
     vector<string> grid;
     for(int j=0;j<n;++j){
         string s; cin >> s;
@@ -23,8 +24,7 @@ int main(){
     }
     map<int,int> mp;
 
-
-    // horizontal ctn
+    // horizontal cnt
     for(string s : grid){
         bool chk = true;
         int cnt = 0;
@@ -39,7 +39,6 @@ int main(){
             mp[cnt]++;
         }
     }
-
 
     //vertical cnt
     for(int j=0;j<n;++j){

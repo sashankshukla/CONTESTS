@@ -55,7 +55,4 @@ int main(){
   }
 }
 
-// find all possible starting indexes
-// for each path, everytime you can add at most m occurences 
-// chose path with min abs difference between consecutive elements
 

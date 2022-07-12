@@ -89,6 +89,5 @@ int main(){
      for(int j=0;j<26;++j) adj[j].clear();  
 
   }
-
-  myfile.close();
+   myfile.close();
 }

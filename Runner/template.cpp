@@ -4,13 +4,18 @@ int dRow[] = { -1, 0, 1, 0 }, dCol[] = { 0, 1, 0, -1 };//direction vectors
 typedef long  long  ll;
 #define MOD 1000000007
 #define pb  push_back
-#define FOR(a)     for(int i=0;i<a;++i)
+#define FOR(a)     for(int it=0;it<a;++it)
 #define sort(v)    sort(v.begin(),v.end());
 #define reverse(v) reverse(v.begin(),v.end());
-#define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
+#define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";  // google 
+#define write(i,s) myfile << "Case #" << i+1 << ": " << s << "\n"; // facebook
 #define line()   "\n"
 
 
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
+  int t; cin >> t;
+  FOR(t){
+    
+  }
 }

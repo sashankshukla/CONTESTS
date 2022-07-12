@@ -8,6 +8,7 @@ typedef long  long  ll;
 #define reverse(v) reverse(v.begin(),v.end());
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
 #define line()   "\n"
+#define write(i,s) myfile << "Case #" << i+1 << ": " << s << "\n";
 
 
 vector<int> adj[26];
@@ -36,6 +37,8 @@ void bfs(int x){
 
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
+  ofstream myfile;
+  myfile.open ("output.txt");
   int t; cin >> t;
   for(int i=0;i<t;++i){
      string s; cin >> s;
@@ -74,9 +77,18 @@ int main(){
           res = min(res,dist);
      }
      if(res == 1e9+1){
-        print(i,"Impossible");
-     }
+         write(i,-1);
+     }    
      else
-     print(i,res);
+        write(i,res);
+     
+
+    for(int j=0;j<26;++j){
+        for(int k=0;k<26;++k) lookup[j][k] = 1e9+1;
+     }
+     for(int j=0;j<26;++j) adj[j].clear();  
+
   }
+
+  myfile.close();
 }

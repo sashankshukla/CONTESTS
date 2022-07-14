@@ -3,68 +3,96 @@ using namespace std;
 int dRow[] = { -1, 0, 1, 0 }, dCol[] = { 0, 1, 0, -1 };//direction vectors
 typedef long  long  ll;
 #define MOD 1000000007
-#define pb  push_back
-#define FOR(a)     for(int i=0;i<a;++i)
-//#define sort(v)    sort(v.begin(),v.end());
-//#define reverse(v) reverse(v.begin(),v.end());
-#define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
+#define FOR(a)     for(int it=0;it<a;++it)
+// printers/writers
+#define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";  // google 
+#define write(i,s) myfile << "Case #" << i+1 << ": " << s << "\n"; // facebook
 #define line()   "\n"
+// file io
+ofstream myfile;
+#define f_init()  myfile.open("output.txt"); cout << "f_init" << line();
+#define f_close() myfile.close(); cout << "f_close" << line();
 
 
 int main(){
-  ios::sync_with_stdio(0);cin.tie(0);
+  ios::sync_with_stdio(0);cin.tie(0); f_init();
   int t; cin >> t;
-  for(int i=0;i<t;++i){
+  FOR(t){
     int n; cin >> n;
-    set<pair<int,int>> set;
     vector<string> grid;
-    for(int j=0;j<n;++j){
+    for(int i=0;i<n;++i){
         string s; cin >> s;
         grid.push_back(s);
     }
-    map<int,int> mp;
 
-    // horizontal cnt
-    for(string s : grid){
+    int total = 0;
+    map<int,int> mp;
+    for(int i=0;i<n;++i){
+        int temp = 0;
         bool chk = true;
         int cnt = 0;
-        for(char ch : s){
-            if(ch == 'O')
+        for(int j=0;j<n;++j){
+            if(grid[i][j] == 'O')
               chk = false;
-            else if(ch == '.')
+            else if(grid[i][j] == '.'){
               ++cnt;
-
+            }
         }
-        if(chk){
-            mp[cnt]++;
+        if(chk && cnt == 1){
+          for(int j=0;j<n;++j){
+            if(grid[i][j] == '.'){
+               grid[i][j] = '*';
+               ++total;
+            }
+          }
+          mp[cnt]++;
+        }
+        else if(chk){
+           mp[cnt]++;
         }
     }
 
-    //vertical cnt
-    for(int j=0;j<n;++j){
+    for(int i=0;i<n;++i){
         bool chk = true;
         int cnt = 0;
         for(string s : grid){
-            char ch = s[j];
+            char ch = s[i];
             if(ch == 'O')
-              chk  = false;
-            else if(ch == '.')
-              ++cnt;
+              chk = false;
+            else if(ch == '*'){
+                ++cnt;
+            }
+            else if(ch == '.'){
+             ++cnt;
+            }
         }
-        if(chk)
+        if(chk && cnt == 1){
+          for(string s : grid){
+            char ch = s[i];
+            if(ch == '.')
+              ++total;
+          }
           mp[cnt]++;
+        }
+        else if(chk)
+         mp[cnt]++;
     }
 
-    int min_key = 1e9+1;
-    for(auto p : mp){
-        if(p.first < min_key && p.first != 0)
-          min_key = p.first;
+    int res = 1e9+1;
+    for(auto p :mp){
+        if(p.first < res && p.first != 0)
+           res = p.first;
     }
-    if(min_key == 1e9+1){
-        print(i,"Impossible");
+
+    if(res == 1e9+1){
+        write(it,"Impossible");
+    }
+    else if(res == 1){
+        write(it,to_string(1)+" "+to_string(total));
     }
     else{
-        cout << "Case #" << i+1 << ": " << min_key << " " << mp[min_key] << "\n";
+        write(it,to_string(res)+" "+to_string(mp[res]));
     }
   }
+  f_close();
 }

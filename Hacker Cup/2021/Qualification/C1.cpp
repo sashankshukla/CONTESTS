@@ -54,8 +54,7 @@ int main(){
 
     bfs(0,vertices,dist, visited);
 
-    ll res= 0;
-    int index = -1;
+    ll res= 0; int index = -1;
     for(int i=0;i<dist.size();++i){
        if(ll(dist[i])>res){
          res = (ll)dist[i];

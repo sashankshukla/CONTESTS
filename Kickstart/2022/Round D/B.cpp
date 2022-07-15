@@ -24,18 +24,15 @@ int main(){
     int m; cin >> m; vector<int> b(m);
     for(int i=0;i<m;++i) cin >> b[i];
     int k ; cin >> k;
-    ll res = 0; ll dp1[k+1]; ll dp2[k+1]; 
+    ll res = 0; ll dp1[n+1]; ll dp2[m+1];
 
-    // for i in (0,k), the dp[i] is the max attainable score by chosing i elements
-    // for i in (0,k) for dp[i], I could chose y elements from the front and i-y from the back
-    //
+
+    // for i in (0,n), dp1[i] represents the max score attainable by picking i elements from a
+    // for in in (0,m), dp2[i] represents the max score attainable by picking i elements from b
 
     // calculate max from both dps
-    for(int i=0;i<n;++i){
-        res = max(res, dp1[i] + dp2[k-i]);
-    }
-
-    print(it,res);
+    // while i<=n and k-i=<m, find max of dp1[i]+dp[k-i];
+    
   }
 
 }

@@ -43,7 +43,7 @@ ll calc(string s){
 }     
  
 int main(){
-  ios::sync_with_stdio(0);cin.tie(0); f_init();
+  ios::sync_with_stdio(0);cin.tie(0);
   int t; cin >> t;
   FOR(t){
     int n; cin >> n;
@@ -52,7 +52,6 @@ int main(){
     for(int i=0;i<s.size();++i){
         res+= calc(s.substr(i,n-i))%MOD;  
     }
-    write(it,res);
+    print(it,res);
   }
-  f_close();
 }

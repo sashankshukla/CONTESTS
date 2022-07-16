@@ -38,7 +38,7 @@ void bfs(int start,vector<int> vertices, vector<ll>& dist , vector<bool> visited
 
 
 int main(){
-  ios::sync_with_stdio(0);cin.tie(0); f_init();
+  ios::sync_with_stdio(0);cin.tie(0);
   int t; cin >> t;
   FOR(t){
     int n; cin >> n;
@@ -78,13 +78,12 @@ int main(){
       other = max(other,(ll)val-vertices[0]);
   
     if(other == -1){
-     write(it,res);}
+     print(it,res);}
     else
-     write(it,res+other);
+     print(it,res+other);
 
     for(int i=0;i<n;++i){
       adj[i].clear();
     }
   }
-  f_close();
 }

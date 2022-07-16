@@ -16,7 +16,7 @@ ofstream myfile;
 
 
 int main(){
-  ios::sync_with_stdio(0);cin.tie(0); f_init();
+  ios::sync_with_stdio(0);cin.tie(0); 
   int t; cin >> t;
   FOR(t){
     int n; cin >> n;
@@ -48,7 +48,6 @@ int main(){
             hand = false;
         }
     }
-    write(it,res);
+    print(it,res);
   }
-  f_close();
 }

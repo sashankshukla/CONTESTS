@@ -17,16 +17,5 @@ ofstream myfile;
 
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
-  int n; cin >> n;
-  vector<ll> v(n);
-  for(int i=0;i<n;++i) cin >> v[i];
-  for(int i=0;i<v.size();++i){
-      if(v[i]%32768 == 0){
-        cout << 0 << endl;
-        continue;
-      }
-      for(int k=0;k<=15;++k){
-         
-      }
-  }
+  cout << 2000 << line();
 }

@@ -27,6 +27,5 @@ int main(){
         ++res;
     }
     print(i,res);
-    
   }
 }

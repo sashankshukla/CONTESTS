@@ -14,4 +14,14 @@ T output_vector(vector<T> v) { cout << " [ " << " " ; for(auto val : v) cout << 
  
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
+  int t; cin >> t;
+  FOR(t){
+    int n ; string s;
+    cin >> n >> s;
+    bool res = true;
+
+    string ans = res ? "Y" : "N";
+    print(it, ans);
+  }
+
 }

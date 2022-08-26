@@ -13,12 +13,7 @@ int main(){
   ios::sync_with_stdio(0);cin.tie(0);
   int t; cin >> t;
   FOR(t){
-     int n; cin >> n;
-     int last = 0, score = 0;
-     while(last < n){
-        ++score;
-        last = last+5;
-     }
-     print(it,score);
+     double n; cin >> n;
+     print(it,ceil(n/5));
   }
 }

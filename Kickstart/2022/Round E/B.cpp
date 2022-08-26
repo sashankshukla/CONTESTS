@@ -28,9 +28,10 @@ int main(){
         while(l<=r){
             int m = l+(r-l)/2;
             if(temp[m] <= target){
-                if(temp[m] != s[i])
-                  res = temp[m];
-                if(m-1 >= 0) res = max(res,temp[m-1]);
+                if(temp[m] == s[i] && m>0)
+                   res = max(temp[m-1],res);
+                else if(temp[m] != s[i])
+                   res = temp[m];
                 l = m+1;
             }
             else

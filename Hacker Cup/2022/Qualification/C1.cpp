@@ -15,5 +15,10 @@ T output_vector(vector<T> vector) { cout << GET_VARIABLE_NAME(vector) << ": ["; 
  
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
-
+  int t; cin >> t;
+  FOR(t){
+    int n; cin >> n;
+    string s; cin >> s;
+    cout << "Case #" << T+1 << ": " << "\n";
+  }
 }

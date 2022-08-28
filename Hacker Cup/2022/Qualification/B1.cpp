@@ -15,5 +15,33 @@ T output_vector(vector<T> vector) { cout << GET_VARIABLE_NAME(vector) << ": ["; 
  
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
-
+  int t; cin >> t;
+  FOR(t){
+    int r,c; cin >> r >> c;
+    int tree_count = 0;
+    vector<string> grid(r);
+    for(int i=0;i<r;++i){
+         cin >> grid[i];
+         for(char ch : grid[i])
+           tree_count+= ch == '^';
+    }
+    if(tree_count == 0){
+      print(T,"Possible");
+      for(string s : grid)
+        cout << s << line();
+      continue;
+    }
+    if(r == 1 || c == 1){
+      print(T,"Impossible");
+      continue;
+    }
+    print(T,"Possible");
+    for(int i=0;i<r;++i){
+      string make = "";
+      for(int j=0;j<c;++j){
+         make+='^';
+      }
+      cout << make << line();
+    }
+  }
 }

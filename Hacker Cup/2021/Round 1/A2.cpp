@@ -37,9 +37,8 @@ ll calc(string s){
             ++res;
             hand = false;
         }
-        total += res;
     }
-    return total;
+    return res;
 }     
  
 int main(){
@@ -49,8 +48,10 @@ int main(){
     int n; cin >> n;
     ll res = 0;
     string s; cin >> s;
-    for(int i=0;i<s.size();++i){
-        res+= calc(s.substr(i,n-i))%MOD;  
+    ll total = calc(s);
+    for(ll i = 0;i <= total;++i){
+        ll subs = 0;
+        res+= (i*subs); 
     }
     print(it,res);
   }

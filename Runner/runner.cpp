@@ -7,13 +7,11 @@ const ll  MOD = 1000000007;
 #define FOR(a)     for(int T=0;T<a;++T)
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
 #define line() "\n" 
-#define GET_VARIABLE_NAME(Variable) (#Variable)
                   
 template <typename T>
-T output_vector(vector<T> vector) { cout << GET_VARIABLE_NAME(vector) << ": ["; for(auto val : vector) cout << val << " " ; cout << "]" << line() ; }
+T output_vector(vector<T> v) { for(auto val : v) cout << val << " "; cout << line();}
  
  
 int main(){
   ios::sync_with_stdio(0);cin.tie(0);
-
 }

@@ -36,9 +36,10 @@ int main(){
     for(int i=0;i<r;++i){
          cin >> grid[i];
          for(int j=0;j<c;++j){
-            tree_count += grid[i][j] == '^';
-            if(grid[i][j] == '^')
-            is_essential[i][j] = true;
+            if(grid[i][j] == '^'){
+              is_essential[i][j] = true;
+              ++tree_count;
+            }  
          }
     }
     if(tree_count == 0){

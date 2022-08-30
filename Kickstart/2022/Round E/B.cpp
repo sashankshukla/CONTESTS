@@ -6,7 +6,6 @@ const ll  MOD = 1000000007;
 #define PI acos(-1)
 #define FOR(a)     for(int t=0;t<a;++t)
 #define print(i,s) cout << "Case #" << i+1 << ": " << s << "\n";
-#define fix(x) cout<<setprecision(x)<<fixed
 #define line() "\n" 
 
 void __print(int x) {cerr << x;}
@@ -40,7 +39,21 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 
 void solve(){
-   
+   int n; cin >> n;
+   vector<int> v(n);
+   for(auto &val : v) cin >> val;
+   vector<int> s = v; sort(s.begin(),s.end());
+   vector<int> mentor(n);
+   for(int i=0;i<n;++i){
+     int target = 2*v[i];
+     auto upper = upper_bound(s.begin(),s.end(),target);
+     --upper;
+     if(s[upper-s.begin()] == v[i])
+        --upper;
+     if(upper - s.begin() == -1)  mentor[i] = -1;
+     else mentor[i] = s[upper-s.begin()];
+   }
+   output_vector(mentor);
 }
 
 int main(){

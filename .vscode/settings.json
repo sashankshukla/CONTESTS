@@ -19,7 +19,8 @@
     "ostream": "cpp",
     "iosfwd": "cpp",
     "*.tcc": "cpp",
-    "fstream": "cpp"
+    "fstream": "cpp",
+    "type_traits": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "C:/MinGW/bin/gcc.exe",
   "C_Cpp_Runner.cppCompilerPath": "C:/MinGW/bin/g++.exe",

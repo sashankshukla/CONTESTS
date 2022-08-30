@@ -39,7 +39,15 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 
 void solve(){
-   
+  int n; cin >> n;
+  string v; cin >> v;
+  vector<int> res(n,1);
+  for(int i=1;i<n;++i){
+      if(v[i] > v[i-1])
+         res[i] = 1+res[i-1];
+  }
+  for(auto val : res) cout << val << " ";
+  cout << line();
 }
 
 int main(){

@@ -39,8 +39,43 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define debug(x...)
 #endif
 
-void solve(){
+struct fields{
+    string s;
+    int d;
+    int u;
+};
 
+bool c1(fields f1,fields f2){
+    if(f1.s == f2.s)
+       return f1.u < f2.u;
+    else
+       return f1.s < f2.s;
+}
+
+bool c2(fields f1,fields f2){
+    if(f1.d == f2.d)
+      return f1.u < f2.u;
+    else
+     return f1.d < f2.d;
+}
+
+void solve(){
+    vector<fields> v1,v2;
+    int n; cin >> n;
+    for(int i=0;i<n;++i){
+        string s; int d,u;
+        cin >> s >> d >> u;
+        v1.push_back({s,d,u});
+        v2.push_back({s,d,u});
+    }
+    sort(v1.begin(),v1.end(),c1);
+    sort(v2.begin(),v2.end(),c2);
+    int res = 0;
+    for(int i=0;i<n;++i){
+        if(v1[i].u == v2[i].u)
+          ++res;
+    }
+    cout << res << line();
 }
 
 int main(){

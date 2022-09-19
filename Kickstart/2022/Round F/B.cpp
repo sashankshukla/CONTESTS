@@ -39,8 +39,61 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define debug(x...)
 #endif
 
-void solve(){
 
+map<int,int> mp;
+
+
+void bfs(vector<int> adj[], int x, int n){
+    queue<int> q;
+    vector<bool> visited(n+1,false);
+    vector<int> dist(n+1,0);
+
+    visited[x] = true;
+    dist[x] = 0;
+    q.push(x);
+    while (!q.empty()) {
+    int s = q.front(); q.pop();
+    // process node s
+    for (auto u : adj[s]) {
+        if (visited[u]) continue;
+        visited[u] = true;
+        dist[u] = dist[s]+1;
+        q.push(u);
+    }
+   }
+   
+   for(int i=1;i<=n;++i){
+       mp[dist[i]]++;
+   }
+}
+
+void solve(){
+    int n,q;
+    cin >> n >> q;
+    vector<int> adj[n+1];
+    for(int i=0;i<n-1;++i){
+        int p,q; cin >> p >> q;
+        adj[p].push_back(q);
+        adj[q].push_back(p);
+    }
+    for(int i=0;i<q;++i){
+        int node; cin >> node;
+    }
+    bfs(adj,1,n);
+    int temp = q;
+    int result = 0;
+    for(auto p : mp){
+        if(p.second <= temp){
+            result+= p.second;
+            temp-=p.second;
+        }
+        else
+        {
+            break;
+        }
+    }
+    cout << result << line();
+    mp.clear();
 }
 
 int main(){

@@ -39,8 +39,18 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define debug(x...)
 #endif
 
-void solve(){
+struct seed{
+    int q,l,v;
+};
 
+void solve(){
+    int d,n,x; cin >> d >> n >> x;
+    vector<seed> seeds(n);
+    for(auto &s : seeds){
+        cin >> s.q >> s.l >> s.v;
+    }
+    int result = 0;
+    
 }
 
 int main(){

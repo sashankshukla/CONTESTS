@@ -50,7 +50,6 @@ void solve(){
         cin >> s.q >> s.l >> s.v;
     }
     int result = 0;
-    
 }
 
 int main(){

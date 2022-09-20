@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/ayazs/OneDrive/Desktop/CONTESTS/Kickstart/2022/Round E",
-      "program": "c:/Users/ayazs/OneDrive/Desktop/CONTESTS/Kickstart/2022/Round E/build/Debug/outDebug",
+      "cwd": "c:/Users/ayazs/OneDrive/Desktop/CONTESTS/Runner",
+      "program": "c:/Users/ayazs/OneDrive/Desktop/CONTESTS/Runner/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
       "setupCommands": [

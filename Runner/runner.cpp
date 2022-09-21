@@ -40,7 +40,46 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 
 
+struct meeting{
+    int s,e;
+};
+
 void solve(){
+   int n,k,x,d; cin >> n >> k >> x >> d;
+   int m; cin >> m;
+   map<int,vector<meeting>> mp;
+   vector<meeting> meetings(m);
+   for(auto &meet : meetings){
+       int p;
+       cin >> p >> meet.s >> meet.e;
+       mp[p].push_back(meet);
+   }
+   int result = 0;
+   for(int i=0;i<=d;++i)
+   {
+      int end = i+x;
+      if(end > d) break;
+      map<int,int> counter;
+      for(auto p : mp){
+          for(auto meet : p.second){
+             // if conflict
+              counter[p.first]++;
+          }
+      }
+      int count = 0;
+      for(auto p : counter){
+         if(p.second > 0) ++count;
+      }
+      if(n-count >= k)
+      {
+        cout << 0 << line();
+        return;
+      }
+      else{
+         //
+      }
+   }
+   cout << result << line();
 }
 
 int main(){

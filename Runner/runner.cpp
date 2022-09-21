@@ -39,8 +39,8 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #define debug(x...)
 #endif
 
-void solve(){
 
+void solve(){
 }
 
 int main(){

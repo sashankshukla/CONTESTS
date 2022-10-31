@@ -40,7 +40,10 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 
 void solve(){
-
+   int n; cin >> n;
+   while(n--){
+     cout << n << line();
+   }
 }
 
 int main(){

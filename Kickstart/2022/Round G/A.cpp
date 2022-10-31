@@ -40,7 +40,8 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 
 void solve(){
-
+   int res = 308 >> 2;
+   cout << res << line();
 }
 
 int main(){

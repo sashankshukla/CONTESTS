@@ -40,8 +40,22 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 
 void solve(){
-   int res = 308 >> 2;
-   cout << res << line();
+  int m,n,p; cin >> m >> n >> p;
+  vector<vector<int>> a(m,vector<int> (n,0));
+  for(int i=0;i<m;++i){
+      for(int j=0;j<n;++j){
+           cin >> a[i][j];
+      }
+  }
+  ll res = 0;
+  for(int i=0;i<n;++i){
+      int mxn = a[p-1][i];
+      for(int j=0;j<m;++j){
+          mxn = max(mxn,a[j][i]);
+      }
+      res += mxn - a[p-1][i];
+  }
+  cout << res << line();
 }
 
 int main(){

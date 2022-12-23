@@ -40,23 +40,21 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 #endif
 
 map<int,int> mp;
-map<int,int> memo;
-int cnt = 0;
 
-void dfs(int start,vector<int> adj[]){
-    if(memo[start]){
-        cnt+= memo[start];
-        return;
+int dfs(int start,vector<int> adj[], map<int,int>& memo){
+    int nodes = 0;
+    if(memo.count(start)){
+       return memo[start];
     }
-    ++cnt;
+    ++nodes;
     for(auto u : adj[start]){
         int curr = mp[start],next = mp[u];
         if(next < curr){
-           dfs(u,adj);
+           nodes+= dfs(u,adj,memo);
         }
     }
-    memo[start] = cnt;
-    return;
+    memo[start] = nodes;
+    return memo[start];
 }
 
 void solve(){
@@ -73,15 +71,13 @@ void solve(){
      adj[y].push_back(x);
   }
 
-  int res = 0;
+  int res = 0; map<int,int> memo;
   for(int i=0;i<n;++i){
-      dfs(i,adj);
-      res = max(cnt,res);
-      cnt = 0;
+      res = max(dfs(i,adj,memo),res);
   }
   cout << res << line();
+  debug(memo);
   mp.clear();
-  cnt = 0;
 }
 
 int main(){
